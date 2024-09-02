@@ -3,7 +3,18 @@ import pandas as pd
 import networkx as nx
 import math
 def build_network_with_word(wort_wahl):
-    
+
+    """
+    build_network_with_word builds a NetworkX graph with 40 words (a word given as a parameter and the 39 words with the
+    highest association to that word). For that it uses the association matrix 'data/coo_matrix.h5'. The nodes are the
+    words. The size of the nodes is the association to the given parameter word. Only the 10 % highest association
+    between the words get visualized as edges. The weight of the edges is the association. For better visualization
+    the associations get logarithmised before applied as node sizes and edge weights.
+
+    :param wort_wahl: the word for which the 39 words with highest association are searched
+    :return: returns the NetworkX graph
+    """
+
     #import the data
     coo_matrix = pd.read_hdf('data/coo_matrix.h5', key='df')
     
