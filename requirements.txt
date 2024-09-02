@@ -1,0 +1,8 @@
+jsonlines
+spacy
+pandas
+networkx
+tables
+streamlit
+matplotlib
+pyvis
