@@ -11,4 +11,4 @@ Folgende Schritte werden zur Vorbereitung der Daten durchgeführt:
 - Stoppwörter entfernen (Liste von github.com/solariz/german_stopwords),
 - Tokenisierung (Wörter werden als einzelne Strings gespeichert).
 
-Im Anschluss daran 
+Im Anschluss daran wird eine Matrix mit den 2.500 häufigsten Wörtern in den Bundestagsreden gebildet. Die symmetrische Matrix ist 2.500 x 2.500 groß. Die Zeilen- sowie Spaltenbeschriftung sind jeweils die 2.500 Wörter. Die Einträge in der Matrix sind das gemeinsame Auftreten (co-occurence) von zwei Wörtern entsprechend der Zeile und Spalte. Zwei Wörter werden als gemeinsam auftretend gezählt, wenn sie beide in einem Fenster vorkommen, dass 40 Wörter groß ist. Das Fenster bewegt sich über alle Reden.
