@@ -1,11 +1,7 @@
 # Readme - Dokumentation des Projekts "bundestag_word_associations"
 Im Rahmen des Seminars "Computational Social Science: Themen und Positionen im Deutschen Bundestag", angeboten von Dr. Sven Banisch am Karlsruher Institut für Technologie, wurde eine App entwickelt, die die Möglichkeit bietet Wortassoziationen in den Bundestagsreden der Legislaturperiode 19 und 20 zu untersuchen. Diese Dokumentation dient dazu die Daten, den Code und die Methoden zu erklären, die Nutzung von Streamlit vorzustellen sowie eine beispielhafte Nutzung der App aufzuzeigen. Die Wahl der Methode orientiert sich an Fuhse et al. (2019) [^1].
 
-## 1. Backend
-
-In diesem Kapitel wird die Datenvorbereitung und die Berechnung des Netzwerks anhand der Wortassoziationen erläutert.
-
-### 1.1. Datenvorbereitung (Jupyter-Notebook "data_preparation.ipynb")
+## 1. Datenvorbereitung (Jupyter-Notebook "data_preparation.ipynb")
 Für das Projekt werden die Reden aus den Bundestagsdebatten der Legislaturperiode 19 und 20 genutzt. In der Legislaturperiode 20 sind alle Reden bis einschließlich 12.04.2024 berücksichtigt. Die Reden wurden als JSON-Datei für die Seminarteilnehmenden zur Verfügung gestellt, die Daten sind aber grundsätzlich auch auf der Webseite des Bundestags verfügbar. Bei den JSON-Dateien für die beiden Legislaturperioden handelt es sich um eine Liste, die Dictionaries beinhaltet. Ein Dictionary ist eine Rede mit dem Text, dem Datum, dem Abgeordneten und weiteren Metadaten. Für dieses Projekt ist lediglich der Text, also die Rede an sich notwendig.
 
 Folgende Schritte werden zur Vorbereitung der Daten durchgeführt:
@@ -24,18 +20,19 @@ $$Wortassoziation = \frac{absolutes gemeinsames Auftreten}{absolutes Auftreten W
 
 Zum Schluss wird die Matrix mit den Assoziationen in "data/coo_matrix.h5" gespeichert und kann so weiterverwendet werden.
 
-### 1.2. Berechnung des Netzwerkgraphen (Python-Skript "build_network_with_word.py")
+## 2. Berechnung des Netzwerkgraphen (Python-Skript "build_network_with_word.py")
 
 Das Python-Skript "build_network_with_word.py" beinhaltet eine Methode aus der ein Netzwerkgraph (mit Bibliothek "networkx") erstellt wird. Dafür wird ein Wort eingegeben. Dieses Wort können später die User:innen in der App wählen. Es werden in der 2.500 x 2.500 Matrix mit den Wortassoziationen die 39 Wörter gesucht, die die höchste Assoziation mit dem eingegeben Wort haben. Somit entsteht eine symmetrische 40 x 40 Matrix mit Wortassoziationen. Die Einträge (Assoziationen) werden logarithmiert, um später im Graphen besser visualisiert werden zu können.
 
 Der Netzwerkgraph wird mit den 40 Wörtern als Knoten erstellt. Die Größe der Knoten ergibt sich aus der Stärke der Assoziation zu dem von den User:innen gewählten Wort. Die Kantengewichte zwischen den Knoten entsprechen ebenfalls der Stärke der Assoziationen. Allerdings werden nur die 10 % der Kanten mit dem größten Gewicht (also stärkste Assoziation) angezeigt. Zum Schluss wird der networkx-Graph zurückgegeben.
 
-## 2. Frontend
+## 3. Frontend
 
 Die App wird mit Streamlit gebaut und ist erreichbar unter "bundestagwords.streamlit.app". Die Webseite/App enthält die Homepage (Homepage.py), das Netzwerk (pages/2_Network.py) und diese Readme-Datei (pages/3_Readme.py).
 
 Bei der Seite "Network" hat der/die User:in die Möglichkeit ein Wort auszuwählen, für das das Netzwerk gebildet wird. Zur Bildung des Netzwerks bedient sich das Python-Skript der Methode aus dem Skript "build_network_with_word.py", der das gewählte Wort übergeben wird. Der durch die Methode erhaltene networkx-Graph wird als pyvis-Graph in einer HTML-Datei gespeichert. Die HTML-Datei bzw. der Graph wird dann direkt in der Website eingebettet.
 
+## 4. Beispiel mit Wort "rechtsextrem"
 
 
 
