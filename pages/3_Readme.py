@@ -6,4 +6,5 @@ markdown_content = markdown_content.replace("dataReadme/network_rechtsextrem.PNG
 
 st.markdown(markdown_content)
 
-st.image("network_rechtsextrem.PNG")
+absolute_path = Path("dataReadme/network_rechtsextrem.PNG").resolve()
+st.image(str(absolute_path))
