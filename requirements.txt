@@ -6,3 +6,4 @@ tables
 streamlit
 matplotlib
 pyvis
+pathlib
