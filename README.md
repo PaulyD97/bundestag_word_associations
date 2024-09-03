@@ -34,7 +34,15 @@ Bei der Seite "Network" hat der/die User:in die Möglichkeit ein Wort auszuwähl
 
 ## 4. Beispiel mit Wort "rechtsextrem"
 
+Bei der Landtagswahl in Thüringen am 01.09.2024 wurde die Partei "AfD" stärkste Kraft. Das Amt für Verfassungsschutz hat die **AfD Thüringen** im März 2021 als "erwiesen rechtsextrem" eingestuft.  Vor diesem Hintergrund werden in dem Beispiel die Wortassoziationen im Bundestag mit dem Wort "rechtsextrem" betrachtet. Folgendes Netzwerk wurde erzeugt:
+
 ![Alt-Text](/dataReadme/network_rechtsextrem.PNG)
+
+Über die Größe der Knoten sowie die vorhanden Kanten (nur 10 % stärkste Assoziationen werden als Kanten angezeigt) kann abgelesen werden, dass folgende Wörter mit den höchsten Assoziationen zu dem Wort "rechtsextrem" sind: "rechtsextremismus", "verfassungsschutz", "netzwerk", "hetze", "mord", "antisemitisch", "rassistisch", "anschlag", "sicherheitsbehörde".
+
+Über die Assoziierungsketten "rechtsextrem" -> "netzwerk" -> "meinungsfreiheit" und "rechtsextrem" -> "hetze" -> "verbreiten" gelangt man zu vier Knoten, die alle miteinander stark assoziiert sind: "fake", "news", "öffentlichrechtlich" und "rundfunk". Je nach politischer Ausrichtung werden rechtsextreme Personen oder Institutionen der Fake-News (und Hetze) bezichtigt. In anderen politischen Lagern wird die Meinung vertreten, dass der öffentlich-rechtiche Rundfunk Fake-News verbreitet. Das Netzwerk zeigt, dass der Begriff "Fake-News" sowohl im Kontext von Rechtsextremismus, als auch im Kontext vom öffentlich-rechtlichen Rundfunk genannt wird. Diese Zusammenhänge sind folglich Teil der Bundestagsdebatten.
+
+"rechtsextrem" ist stark mit "antisemitisch" und "rassistisch" assoziiert. Diese beiden Wörter sind stark mit "antisemitismus" assoziiert, das wiederum stark mit "storch" assoziiert ist. Das Ergebnis ist also, dass die Bundestagsabgeordnete der AfD-Fraktion Beatrix von Storch häufig im Zusammenhang mit dem Wort "antisemitismus" genannt wird. Die Abgeordnete von Storch ist Antisemitismusbeauftragte der Bundestagsfraktion der AfD. Das wird einen Einfluss darauf haben, dass von Storch häufig mit dem Wort "antisemitismus" genannt wird. In diesem Fall muss also berücksichtigt werden, dass von Storch in ihrer Funktion vermeintlich gegen den Antisemitismus arbeitet. Das zeigt allgemein für die Interpretation von Ergebnissen, dass eine hohe Assoziation einer Person mit einem Wort nicht bedeuten muss, dass diese Person Werte, Interessen oder Ideologien hinter diesem Wort vertritt, sondern gerade das Gegenteil der Fall sein kann.
 
 
 [^1]: **Fuhse, J.; O. Stuhler; J. Riebling; J. Martin (2019):** Relating social and symbolic relations in quantitative text analysis. A study of parliamentary discourse in the Weimar Republic. In: *Poetics 78.* DOI: 10.1016/j.poetic.2019.04.004.
