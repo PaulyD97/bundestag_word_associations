@@ -36,7 +36,7 @@ Bei der Seite "Network" hat der/die User:in die Möglichkeit ein Wort auszuwähl
 
 Bei der Landtagswahl in Thüringen am 01.09.2024 wurde die Partei "AfD" stärkste Kraft. Das Amt für Verfassungsschutz hat die **AfD Thüringen** im März 2021 als "erwiesen rechtsextrem" eingestuft.  Vor diesem Hintergrund werden in dem Beispiel die Wortassoziationen im Bundestag mit dem Wort "rechtsextrem" betrachtet. Folgendes Netzwerk wurde erzeugt:
 
-![Alt-Text](/dataReadme/network_rechtsextrem.PNG)
+![Alt-Text](bundestag_word_associations/dataReadme/network_rechtsextrem.PNG)
 
 Über die Größe der Knoten sowie die vorhanden Kanten (nur 10 % stärkste Assoziationen werden als Kanten angezeigt) kann abgelesen werden, dass folgende Wörter mit den höchsten Assoziationen zu dem Wort "rechtsextrem" sind: "rechtsextremismus", "verfassungsschutz", "netzwerk", "hetze", "mord", "antisemitisch", "rassistisch", "anschlag", "sicherheitsbehörde".
 
