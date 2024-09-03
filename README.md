@@ -26,20 +26,17 @@ Zum Schluss wird die Matrix mit den Assoziationen in "data/coo_matrix.h5" gespei
 
 ### 1.2. Berechnung des Netzwerkgraphen (Python-Skript "build_network_with_word.py")
 
-Das Python-Skript "build_network_with_word.py" beinhaltet eine Methode aus der ein Netzwerkgraph (mit package "networkx") erstellt wird. Dafür wird ein Wort eingegeben. Dieses Wort können später die User:innen in der App wählen. Es werden in der 2.500 x 2.500 Matrix mit den Wortassoziationen die 39 Wörter gesucht, die die höchste Assoziation mit dem eingegeben Wort haben. Somit entsteht eine symmetrische 40 x 40 Matrix mit Wortassoziationen. Die Einträge (Assoziationen) werden logarithmiert, um später im Graphen besser visualisiert werden zu können.
+Das Python-Skript "build_network_with_word.py" beinhaltet eine Methode aus der ein Netzwerkgraph (mit Bibliothek "networkx") erstellt wird. Dafür wird ein Wort eingegeben. Dieses Wort können später die User:innen in der App wählen. Es werden in der 2.500 x 2.500 Matrix mit den Wortassoziationen die 39 Wörter gesucht, die die höchste Assoziation mit dem eingegeben Wort haben. Somit entsteht eine symmetrische 40 x 40 Matrix mit Wortassoziationen. Die Einträge (Assoziationen) werden logarithmiert, um später im Graphen besser visualisiert werden zu können.
 
-Der Netzwerkgraph wird mit den 40 Wörtern als Knoten erstellt. Die Größe der Knoten ergibt sich aus der Stärke der Assoziation zu dem von den User:innen gewählten Wort. Die Kantengewichte zwischen den Knoten entsprechen ebenfalls den Assoziationen. Allerdings werden nur die 10 % der Kanten mit dem größten Gewicht (also stärkste Assoziation) angezeigt.
+Der Netzwerkgraph wird mit den 40 Wörtern als Knoten erstellt. Die Größe der Knoten ergibt sich aus der Stärke der Assoziation zu dem von den User:innen gewählten Wort. Die Kantengewichte zwischen den Knoten entsprechen ebenfalls der Stärke der Assoziationen. Allerdings werden nur die 10 % der Kanten mit dem größten Gewicht (also stärkste Assoziation) angezeigt. Zum Schluss wird der networkx-Graph zurückgegeben.
 
+## 2. Frontend
 
+Die App wird mit Streamlit gebaut und ist erreichbar unter "bundestagwords.streamlit.app". Die Webseite/App enthält die Homepage (Homepage.py), das Netzwerk (pages/2_Network.py) und diese Readme-Datei (pages/3_Readme.py).
 
-
-
-
-
+Bei der Seite "Network" hat der/die User:in die Möglichkeit ein Wort auszuwählen, für das das Netzwerk gebildet wird. Zur Bildung des Netzwerks bedient sich das Python-Skript der Methode aus dem Skript "build_network_with_word.py", der das gewählte Wort übergeben wird. Der durch die Methode erhaltene networkx-Graph wird als pyvis-Graph in einer HTML-Datei gespeichert. Die HTML-Datei bzw. der Graph wird dann direkt in der Website eingebettet.
 
 
 
 
 [^1]: **Fuhse, J.; O. Stuhler; J. Riebling; J. Martin (2019):** Relating social and symbolic relations in quantitative text analysis. A study of parliamentary discourse in the Weimar Republic. In: *Poetics 78.* DOI: 10.1016/j.poetic.2019.04.004.
-
-
