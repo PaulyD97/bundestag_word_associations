@@ -1,4 +1,4 @@
 import streamlit as st
 from pathlib import Path
 
-st.markdown(read_markdown_file(Path("README.md").read_text()))
+st.markdown(Path("README.md").read_text(), unsafe_allow_html=True)
