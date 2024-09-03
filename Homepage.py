@@ -13,7 +13,7 @@ st.title('Assoziationen in Bundestagsreden')
 
 st.write("Diese App bietet die Möglichkeit Wortassoziationen in den Bundestagsreden der Legislaturperiode 19 und 20 zu u"
          "ntersuchen. Die Nutzer:innen haben die Möglichkeit ein Wort auszuwählen. Dann wird ein Netzwerk angezeigt, da"
-         "s aus 40 Wörtern besteht und die Wörter mit der höchsten Assoziation zu dem ausgewählten Wort beinhaltet."
+         "s aus 40 Wörtern besteht und die Wörter mit der höchsten Assoziation zu dem ausgewählten Wort beinhaltet. "
         "Die Assoziation eines Worts mit einem anderen Wort wird von der Häufigkeit abgeleitet, wie oft die zwei Wörter mit einem"
         " Abstand von maximal 20 Worten zusammen in den Bundestagsreden vorkommen.")
 
