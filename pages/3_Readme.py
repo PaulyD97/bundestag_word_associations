@@ -1,4 +1,5 @@
 import streamlit as st
 from pathlib import Path
 
-st.markdown(Path("README.md").read_text(), unsafe_allow_html=True)
+markdown_content = Path("README.md").read_text()
+markdown_content = markdown_content.replace("dataReadme.png", "pfad/zum/bildname.png")
