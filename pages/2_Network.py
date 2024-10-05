@@ -9,8 +9,11 @@ import numpy as np
 #import the data for building a list for the options of words for the user
 coo_matrix = pd.read_hdf('data/coo_matrix.h5', key='df')
 
+# Sort the columns alphabetically
+coo_matrix_sorted = coo_matrix.reindex(sorted(coo_matrix.columns), axis=1)
+
 #user can choose a word from the list
-selected_word = st.selectbox('Auswahl Wort', coo_matrix.columns)
+selected_word = st.selectbox('Auswahl Wort', coo_matrix_sorted.columns)
 
 # builds the graph with the chosen word
 G = build_network_with_word(selected_word)
