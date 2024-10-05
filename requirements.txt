@@ -7,3 +7,4 @@ streamlit
 matplotlib
 pyvis
 pathlib
+pytables
