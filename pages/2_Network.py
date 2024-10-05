@@ -13,7 +13,7 @@ coo_matrix = pd.read_hdf('data/coo_matrix.h5', key='df')
 coo_matrix_sorted = coo_matrix.reindex(sorted(coo_matrix.columns), axis=1)
 
 #user can choose a word from the list
-selected_word = st.selectbox('Auswahl Wort', coo_matrix_sorted.columns, index="demokratie")
+selected_word = st.selectbox('Auswahl Wort', coo_matrix_sorted.columns, index=list(coo_matrix_sorted.columns).index("demokratie"))
 
 # builds the graph with the chosen word
 G = build_network_with_word(selected_word)
