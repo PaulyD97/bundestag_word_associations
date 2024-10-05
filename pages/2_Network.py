@@ -3,6 +3,8 @@ import streamlit as st
 import streamlit.components.v1 as components
 from pyvis.network import Network
 from build_network_with_word import build_network_with_word
+import networkx as nx
+import numpy as np
 
 #import the data for building a list for the options of words for the user
 coo_matrix = pd.read_hdf('data/coo_matrix.h5', key='df')
@@ -45,6 +47,12 @@ graph_ch.set_options("""
     "maxVelocity": 2
   }
 }""")
+
+# the datatype "float32" cant be saved in a html file, the following code converts to normal float
+for edge in G.edges(data=True):
+    for key, value in edge[2].items():
+        if isinstance(value, np.float32):
+            edge[2][key] = float(value)
 
 # This creates a pyvis graph from the networkx graph (we do this because a pyvis graph is easily stored as an HTML file which we can load into streamlit)
 graph_ch.from_nx(G)
