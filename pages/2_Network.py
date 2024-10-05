@@ -49,6 +49,10 @@ graph_ch.set_options("""
 }""")
 
 # the datatype "float32" cant be saved in a html file, the following code converts to normal float
+for node in G.nodes(data=True):
+    for key, value in node[1].items():
+        if isinstance(value, np.float32):
+            node[1][key] = float(value)
 for edge in G.edges(data=True):
     for key, value in edge[2].items():
         if isinstance(value, np.float32):
